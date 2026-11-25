@@ -1,0 +1,10 @@
+project:
+  type: website
+  resources:
+    - "theme/*.png"
+
+website:
+  title: "Explaining the CRPS"
+  description: "Interactive slides explaining the Continuous Ranked Probability Score for evaluating probabilistic forecasts."
+
+editor: visual
