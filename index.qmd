@@ -1,0 +1,104 @@
+---
+pagetitle: "Explaining the CRPS"
+from: markdown+emoji
+format: 
+  letterbox-revealjs:
+    theme: [custom.scss, theme/acefa.scss, theme/gala.scss]
+    progress: false
+    menu: false
+    width: 1280
+    height: 720
+    include-after-body: deps.html
+---
+
+## Accuracy and precision {.acefa-content .full-figure}
+
+::: {.targets}
+
+::: {.target}
+![](figures/target-neither.svg){fig-alt="Neither accurate nor precise"}
+
+<span class="acc no">Accurate</span> <span class="pre no">Precise</span>
+:::
+
+::: {.target}
+![](figures/target-accurate.svg){fig-alt="Accurate, not precise"}
+
+<span class="acc">Accurate</span> <span class="pre no">Precise</span>
+:::
+
+::: {.target}
+![](figures/target-precise.svg){fig-alt="Precise, not accurate"}
+
+<span class="acc no">Accurate</span> <span class="pre">Precise</span>
+:::
+
+::: {.target}
+![](figures/target-both.svg){fig-alt="Accurate and precise"}
+
+<span class="acc">Accurate</span> <span class="pre">Precise</span>
+:::
+:::
+
+::: {.target-defs}
+**Accuracy**: true to intention
+
+**Precision**: true to itself
+:::
+
+## Mean Absolute Error (MAE) {.acefa-content}
+
+**MAE** compares *forecast means* with *observed values*.
+
+$$
+\text{MAE}(\hat{y}, y) = \frac{1}{h} \sum_{t=T+1}^{T+h} \left| \hat{y}_t - y_t \right|
+$$
+
+Where:
+
+- $\hat{y}_t$: forecast mean at time $t$  
+- $y_t$: observed value at time $t$  
+- $h$: forecast horizon (number of forecasts)
+
+## Mean Absolute Error (MAE) {.acefa-content}
+
+```{=html}
+<div class="score-slider" data-score="mae" data-prevent-swipe></div>
+```
+
+## Continuous Ranked Probability Score (CRPS) {.acefa-content}
+
+**CRPS** compares the *forecast distribution* with *observed values*.
+
+$$\text{CRPS}(F, y) = \int_{-\infty}^{\infty} \left( F(x) - \mathbf{1}\{x \geq y\} \right)^2 dx$$
+
+Where:
+
+- $F(x)$: forecast cumulative distribution function at value $x$
+- $y$: observed value
+- $\mathbf{1}\{y \geq x\}$: indicator function (equals 1 if $x \geq y$, 0 otherwise)
+
+## Continuous Ranked Probability Score (CRPS) {.acefa-content}
+
+```{=html}
+<div class="score-slider" data-score="crps-density" data-prevent-swipe></div>
+```
+
+## Continuous Ranked Probability Score (CRPS) {.acefa-content}
+
+```{=html}
+<div class="score-slider" data-score="crps" data-prevent-swipe></div>
+```
+
+## CRPS is ideal to evaluate forecast accuracy {.acefa-content}
+
+It rewards forecasts that are **accurate** *and* **precise**.
+
+It penalises forecasts that are:
+
+* **Inaccurate** - far from the observed value
+* **Imprecise** - wide intervals
+* **Unreliable** - narrow intervals (when incorrect)
+
+![](backgrounds/kasia-gajek-UMne1WKuesY-unsplash.jpg){.image-right}
+
