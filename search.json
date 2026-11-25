@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html#accuracy-and-precision",
+    "href": "index.html#accuracy-and-precision",
+    "title": "Explaining the CRPS",
+    "section": "Accuracy and precision",
+    "text": "Accuracy and precision\n\n\n\nAccurate Precise\n\n\n\nAccurate Precise\n\n\n\nAccurate Precise\n\n\n\nAccurate Precise\n\n\n\nAccuracy: true to intention\nPrecision: true to itself"
+  },
+  {
+    "objectID": "index.html#mean-absolute-error-mae",
+    "href": "index.html#mean-absolute-error-mae",
+    "title": "Explaining the CRPS",
+    "section": "Mean Absolute Error (MAE)",
+    "text": "Mean Absolute Error (MAE)\nMAE compares forecast means with observed values.\n\\[\n\\text{MAE}(\\hat{y}, y) = \\frac{1}{h} \\sum_{t=T+1}^{T+h} \\left| \\hat{y}_t - y_t \\right|\n\\]\nWhere:\n\n\\(\\hat{y}_t\\): forecast mean at time \\(t\\)\n\n\\(y_t\\): observed value at time \\(t\\)\n\n\\(h\\): forecast horizon (number of forecasts)"
+  },
+  {
+    "objectID": "index.html#mean-absolute-error-mae-1",
+    "href": "index.html#mean-absolute-error-mae-1",
+    "title": "Explaining the CRPS",
+    "section": "Mean Absolute Error (MAE)",
+    "text": "Mean Absolute Error (MAE)"
+  },
+  {
+    "objectID": "index.html#continuous-ranked-probability-score-crps",
+    "href": "index.html#continuous-ranked-probability-score-crps",
+    "title": "Explaining the CRPS",
+    "section": "Continuous Ranked Probability Score (CRPS)",
+    "text": "Continuous Ranked Probability Score (CRPS)\nCRPS compares the forecast distribution with observed values.\n\\[\\text{CRPS}(F, y) = \\int_{-\\infty}^{\\infty} \\left( F(x) - \\mathbf{1}\\{x \\geq y\\} \\right)^2 dx\\]\nWhere:\n\n\\(F(x)\\): forecast cumulative distribution function at value \\(x\\)\n\\(y\\): observed value\n\\(\\mathbf{1}\\{y \\geq x\\}\\): indicator function (equals 1 if \\(x \\geq y\\), 0 otherwise)"
+  },
+  {
+    "objectID": "index.html#continuous-ranked-probability-score-crps-1",
+    "href": "index.html#continuous-ranked-probability-score-crps-1",
+    "title": "Explaining the CRPS",
+    "section": "Continuous Ranked Probability Score (CRPS)",
+    "text": "Continuous Ranked Probability Score (CRPS)"
+  },
+  {
+    "objectID": "index.html#continuous-ranked-probability-score-crps-2",
+    "href": "index.html#continuous-ranked-probability-score-crps-2",
+    "title": "Explaining the CRPS",
+    "section": "Continuous Ranked Probability Score (CRPS)",
+    "text": "Continuous Ranked Probability Score (CRPS)"
+  },
+  {
+    "objectID": "index.html#crps-is-ideal-to-evaluate-forecast-accuracy",
+    "href": "index.html#crps-is-ideal-to-evaluate-forecast-accuracy",
+    "title": "Explaining the CRPS",
+    "section": "CRPS is ideal to evaluate forecast accuracy",
+    "text": "CRPS is ideal to evaluate forecast accuracy\nIt rewards forecasts that are accurate and precise.\nIt penalises forecasts that are:\n\nInaccurate - far from the observed value\nImprecise - wide intervals\nUnreliable - narrow intervals (when incorrect)"
+  }
+]
